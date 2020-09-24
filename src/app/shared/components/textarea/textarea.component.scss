@@ -1,0 +1,25 @@
+@import 'src/app/shared/styles/variables';
+
+
+.textarea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  label {
+    padding: 1rem;
+  }
+
+  div {
+    height: auto;
+    min-height: 8rem;
+    padding: 1rem;
+    color: $accent-text;
+    background-color: $primary-text;
+    font-size: 1.5rem;
+
+    &:focus {
+      outline: .2rem solid $accent;
+    }
+  }
+}

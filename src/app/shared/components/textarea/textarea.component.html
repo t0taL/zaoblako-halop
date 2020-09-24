@@ -1,0 +1,13 @@
+<div class="textarea">
+  <label for="textarea">{{ inputConfig.label }}</label>
+
+  <div
+    #textarea
+    name="textarea"
+    role="textarea"
+    [textContent]="value"
+    (input)="updateValue(textarea.textContent)"
+    [contentEditable]="true"
+  >
+  </div>
+</div>

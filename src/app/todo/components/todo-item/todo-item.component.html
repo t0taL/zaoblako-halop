@@ -1,0 +1,41 @@
+<div class="todo-item">
+  <div class="todo-item__content">
+    <div
+      class="todo-item__content__name"
+      [class.completed]="todoItem?.status"
+      [class.deleted]="todoItem?.deleted"
+    >
+      <span>{{ todoItem?.name }}</span>
+    </div>
+  
+    <div class="todo-item__content__description">
+      <span>{{ todoItem?.description }}</span>
+    </div>
+  </div>
+
+  <div class="todo-item__actions">
+    <div
+      class="todo-item__actions__toggle"
+      [class.deleted]="todoItem?.deleted"
+      (click)="toggleActions()"
+    >
+      {{ showActions ? '&#10097;' : '&#10096;' }}
+    </div>
+
+    <div *ngIf="showActions" [@widthAnimation] class="todo-item__actions__wrapper">
+      <div *ngIf="todoItem?.status; then returnBtn else completeBtn"></div>
+
+      <ng-template #completeBtn>
+        <app-button (clickEvent)="completeTodo()">Завершить</app-button>
+      </ng-template>
+      
+      <ng-template #returnBtn>
+        <app-button (clickEvent)="returnTodo()">Вернуть</app-button>
+      </ng-template>
+
+      <app-button (clickEvent)="editTodo()">Редактировать</app-button>
+      
+      <app-button (clickEvent)="deleteTodo()">Удалить</app-button>
+    </div>
+  </div>
+</div>

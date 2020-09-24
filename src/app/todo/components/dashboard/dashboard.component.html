@@ -1,0 +1,33 @@
+<div class="dashboard">
+  <div class="dashboard__actions">
+    <app-select
+      [options]="selectOptions"
+      (selectEvent)="selectOption($event)"
+    >
+    </app-select>
+
+    <app-button (clickEvent)="addTodo()">
+      Добавить
+    </app-button>
+  </div>
+  
+  <div class="dashboard__content">
+    <app-todo-item
+      *ngFor="let item of (todos$ | async | todoList:filterValue)"
+      [todoItem]="item"
+      (completeEvent)="completeTodo($event)"
+      (returnEvent)="returnTodo($event)"
+      (editEvent)="editTodo($event)"
+      (deleteEvent)="deleteTodo($event)"
+    >
+    </app-todo-item>
+  </div>
+</div>
+
+<app-todo-modal
+  *ngIf="isModalOpened"
+  [@fadeInOutAnimation]
+  [config]="config"
+  (closeEvent)="closeModal()"
+>
+</app-todo-modal>

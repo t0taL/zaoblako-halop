@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="select" (click)="toggleOptions()">
+    <span class="select__selected-value">{{ selectedOption?.viewValue }}</span>
+
+    <div class="select__action" [class.opened]="showOptions">&#10096;</div>
+  </div>
+
+  <div *ngIf="showOptions" [@optionsAnimation] class="options">
+    <div
+      *ngFor="let option of options"
+      class="options__item"
+      (click)="selectOption(option)"
+    >
+      <span>{{ option.viewValue }}</span>
+    </div>
+  </div>
+</div>

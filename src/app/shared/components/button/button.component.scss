@@ -1,0 +1,13 @@
+@import 'src/app/shared/styles/variables';
+
+
+.button {
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  color: $accent-text;
+  background-color:$accent;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}

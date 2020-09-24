@@ -1,0 +1,54 @@
+@import 'src/app/shared/styles/variables';
+
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+  .select {
+    display: flex;
+    padding: 1rem;
+    margin: 0 1rem;
+    align-items: center;
+    color: $accent-text;
+    background-color: $accent;
+    cursor: pointer;
+
+    &__selected-value {
+      margin-right: 1rem;
+    }
+
+    &__action {
+      position: relative;
+      display: flex;
+      top: -.3rem;
+      width: 2rem;
+      height: 2rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      transition: 300ms;
+
+      &.opened {
+        top: 0;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    color: $accent-text;
+    background-color: $accent;
+    overflow: hidden;
+
+    &__item {
+      padding: 1rem;
+      border-top: .1rem solid $primary-text;
+      cursor: pointer;
+    }
+  }
+}

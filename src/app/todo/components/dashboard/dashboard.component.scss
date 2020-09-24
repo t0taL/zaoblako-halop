@@ -1,0 +1,30 @@
+@import 'src/app/shared/styles/variables';
+
+
+:host {
+  height: 100%;
+}
+
+.dashboard {
+  height: inherit;
+
+  &__actions {
+    display: flex;
+    height: 6rem;
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: .1rem solid $primary-text;
+  }
+
+  &__content {
+    height: calc(100% - 6rem);
+    padding: 1rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: rgba(255, 255, 255, 0.0);
+    }
+  }
+}

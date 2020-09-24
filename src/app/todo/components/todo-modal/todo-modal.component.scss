@@ -1,0 +1,49 @@
+@import 'src/app/shared/styles/variables';
+
+
+:host {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  width: 100%;
+  max-width: 50rem;
+  min-width: 31rem;
+  margin: 0 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  border: .1rem solid $primary-text;
+  background-color: $black-color;
+
+  & > * {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+
+    span {
+      font-size: 1.8rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

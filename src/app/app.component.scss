@@ -1,0 +1,9 @@
+@import 'src/app/shared/styles/variables';
+
+
+.content {
+  height: calc(100% - #{$header-height});
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+}

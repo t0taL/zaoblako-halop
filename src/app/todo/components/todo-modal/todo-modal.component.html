@@ -1,0 +1,17 @@
+<div class="modal">
+  <div class="modal__title">
+    <span>{{ title }}</span>
+  </div>
+
+  <div class="modal__form" [formGroup]="formGroup">
+    <app-input formControlName="name" [inputConfig]="{ label: 'Имя'}"></app-input>
+    
+    <app-textarea formControlName="description" [inputConfig]="{ label: 'Описание'}"></app-textarea>
+  </div>
+
+  <div class="modal__actions">
+    <app-button (clickEvent)="close()">Закрыть</app-button>
+
+    <app-button (clickEvent)="save()">Сохранить</app-button>
+  </div>
+</div>
