@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { optionsAnimation } from './animations/options.animation';
+import { selectOptionsAnimation } from '../../animations/select-options.animation';
 
 import { ISelectOption } from '../../interfaces/select-option.interface';
 
@@ -9,7 +9,7 @@ import { ISelectOption } from '../../interfaces/select-option.interface';
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
-  animations: [optionsAnimation],
+  animations: [selectOptionsAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectComponent implements OnInit {

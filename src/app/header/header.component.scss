@@ -4,15 +4,17 @@
 :host {
   display: flex;
   height: $header-height;
-  background-color: $primary;
 }
 
 .header {
+  display: flex;
   height: inherit;
   width: 100%;
   max-width: $content-width;
   padding: 0 1rem;
   margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
 
   &__logo {
     position: relative;
@@ -31,7 +33,8 @@
       height: 3.5rem;
       width: 15rem;
       content: "";
-      border: 1px solid $primary-text;
+      border: 1px solid;
+      border-color: inherit;
     }
 
     &::after {
@@ -42,13 +45,13 @@
       height: 3.5rem;
       width: 15rem;
       content: "";
-      border: 1px solid $primary-text;
+      border: 1px solid;
+      border-color: inherit;
     }
 
     span {
       position: relative;
       top: .2rem;
-      color: $primary-text;
       font-size: 2.5rem;
     }
   }

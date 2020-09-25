@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { widthAnimation } from '../../animations/width.animation';
+import { todoActionsAnimation } from '../../animations/todo-actions.animation';
 
 import { ITodo } from '../../models/todo.model';
 
@@ -9,7 +9,7 @@ import { ITodo } from '../../models/todo.model';
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss'],
-  animations: [ widthAnimation ],
+  animations: [todoActionsAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoItemComponent implements OnInit {

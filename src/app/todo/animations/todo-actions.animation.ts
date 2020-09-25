@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 
 
-export const widthAnimation = trigger('widthAnimation', [
+export const todoActionsAnimation = trigger('todoActionsAnimation', [
   transition(':leave', [
     animate('300ms ease', style({ width: '0' }))
   ]),

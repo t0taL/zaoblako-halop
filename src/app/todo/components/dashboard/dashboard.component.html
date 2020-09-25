@@ -1,14 +1,8 @@
 <div class="dashboard">
-  <div class="dashboard__actions">
-    <app-select
-      [options]="selectOptions"
-      (selectEvent)="selectOption($event)"
-    >
-    </app-select>
+  <div class="dashboard__actions border-pr-color">
+    <app-select [options]="selectOptions" (selectEvent)="selectOption($event)"></app-select>
 
-    <app-button (clickEvent)="addTodo()">
-      Добавить
-    </app-button>
+    <app-button (clickEvent)="addTodo()">Добавить</app-button>
   </div>
   
   <div class="dashboard__content">
@@ -26,7 +20,7 @@
 
 <app-todo-modal
   *ngIf="isModalOpened"
-  [@fadeInOutAnimation]
+  [@modalAnimation]
   [config]="config"
   (closeEvent)="closeModal()"
 >

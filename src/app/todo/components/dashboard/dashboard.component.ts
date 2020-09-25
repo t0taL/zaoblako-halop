@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { fadeInOutAnimation } from '../../animations/fade-in-out.animation';
+import { modalAnimation } from '../../animations/modal.animation';
 
 import { TodoService } from '../../services/todo-service/todo.service';
 
@@ -17,7 +17,7 @@ import { FilterOptions, getOptionsForSelect } from '../../enum/filter-options.en
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  animations: [fadeInOutAnimation],
+  animations: [modalAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {

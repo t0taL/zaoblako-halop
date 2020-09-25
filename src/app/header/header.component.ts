@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnInit, Renderer2 } from '@angular/core';
 
+
+enum Themes {
+  LIGHT = 'alternative-theme',
+  DARK = 'standard-theme'
+}
 
 @Component({
   selector: 'app-header',
@@ -8,11 +14,22 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
-  readonly logoSrc: string = 'src/assets/logo.png';
-
-  constructor() {
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {
   }
 
   ngOnInit(): void {
+  }
+
+  changeTheme(state: boolean): void {
+    if (state) {
+      this.renderer.removeClass(this.document.body, Themes.LIGHT);
+      this.renderer.addClass(this.document.body, Themes.DARK);
+    } else {
+      this.renderer.removeClass(this.document.body, Themes.DARK);
+      this.renderer.addClass(this.document.body, Themes.LIGHT);
+    }
   }
 }

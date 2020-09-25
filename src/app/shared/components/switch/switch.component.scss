@@ -1,0 +1,21 @@
+.switch {
+  display: flex;
+  height: 3rem;
+  width: 5rem;
+  padding: .3rem;
+  align-items: center;
+  border: .1rem solid;
+  cursor: pointer;
+
+  &__indicator {
+    height: 2rem;
+    width: 2rem;
+    margin-left: 0;
+    border: .1rem solid;
+    transition: 300ms;
+
+    &.switched {
+      margin-left: 2.2rem;
+    }
+  }
+}

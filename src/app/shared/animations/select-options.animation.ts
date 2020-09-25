@@ -1,7 +1,7 @@
 import { animate,  style, transition, trigger } from '@angular/animations';
 
 
-export const optionsAnimation = trigger('optionsAnimation', [
+export const selectOptionsAnimation = trigger('selectOptionsAnimation', [
   transition(':leave', [
     animate('300ms ease', style({ height: 0 }))
   ]),

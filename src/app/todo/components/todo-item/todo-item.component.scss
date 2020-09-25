@@ -1,11 +1,8 @@
-@import 'src/app/shared/styles/variables';
-
-
 .todo-item {
   position: relative;
   display: flex;
   margin: 1rem;
-  border: .1rem solid $primary-text;
+  border: .1rem solid;
   overflow: hidden;
 
   &__content {
@@ -14,15 +11,6 @@
   
     &__name {
       padding: 1rem;
-      background-color: $primary;
-      
-      &.completed {
-        background-color: $green-color;
-      }
-
-      &.deleted {
-        background-color: $red-color;
-      }
 
       span {
         font-size: 1.6rem;
@@ -44,7 +32,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: $black-color;
 
     &__toggle {
       display: flex;
@@ -53,12 +40,9 @@
       align-items: center;
       justify-content: center;
       font-size: 2.5rem;
-      color: $accent-text;
-      background-color: $accent;
       cursor: pointer;
 
       &.deleted {
-        background-color: $primary-text;
         pointer-events: none;
       }
     }

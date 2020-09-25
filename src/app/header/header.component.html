@@ -1,5 +1,9 @@
 <header class="header">
-  <div class="header__logo">
-    <span>HALOP</span>
+  <div class="header__logo border-pr-color">
+    <span class="text-pr-color">HALOP</span>
+  </div>
+
+  <div class="header__actions">
+    <app-switch (switchEvent)="changeTheme($event)"></app-switch>
   </div>
 </header>

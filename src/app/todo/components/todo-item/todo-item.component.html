@@ -1,7 +1,7 @@
-<div class="todo-item">
+<div class="todo-item border-pr-color">
   <div class="todo-item__content">
     <div
-      class="todo-item__content__name"
+      class="todo-item__content__name bg-pr-color"
       [class.completed]="todoItem?.status"
       [class.deleted]="todoItem?.deleted"
     >
@@ -13,16 +13,16 @@
     </div>
   </div>
 
-  <div class="todo-item__actions">
+  <div class="todo-item__actions main-bg-color">
     <div
-      class="todo-item__actions__toggle"
+      class="todo-item__actions__toggle text-ac-color bg-ac-color"
       [class.deleted]="todoItem?.deleted"
       (click)="toggleActions()"
     >
       {{ showActions ? '&#10097;' : '&#10096;' }}
     </div>
 
-    <div *ngIf="showActions" [@widthAnimation] class="todo-item__actions__wrapper">
+    <div *ngIf="showActions" [@todoActionsAnimation] class="todo-item__actions__wrapper">
       <div *ngIf="todoItem?.status; then returnBtn else completeBtn"></div>
 
       <ng-template #completeBtn>
