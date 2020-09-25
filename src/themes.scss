@@ -1,0 +1,84 @@
+// mixins
+@mixin theme($primary-color, $primary-text-color, $accent-color, $accent-text-color, $completed-color, $deleted-color) {
+  color: $primary-text-color;
+  background-color: $accent-text-color;
+
+  .bg-pr-color {
+    background-color: $primary-color;
+
+    &.completed {
+      background-color: $completed-color;
+    }
+
+    &.deleted {
+      background-color: $deleted-color;
+    }
+  }
+
+  .bg-ac-color {
+    background-color: $accent-color;
+
+    &.deleted {
+      background-color: $primary-text-color;
+    }
+  }
+
+  .input-bg-color {
+    background-color: $primary-text-color;
+  }
+
+  .main-bg-color {
+    background-color: $accent-text-color;
+  }
+
+  .text-pr-color {
+    color: $primary-text-color;
+  }
+
+  .text-ac-color {
+    color: $accent-text-color;
+  }
+
+  .border-pr-color {
+    border-color: $primary-text-color;
+  }
+
+  .border-ac-color {
+    border-color: $accent-text-color;
+  }
+
+  .outline-pr-color {
+    outline-color: $primary-color !important;
+  }
+
+  .outline-ac-color {
+    outline-color: $accent-color !important;
+  }
+}
+
+// themes
+.standard-theme {
+  $light-blue-color: #00fbfe;
+  $dark-blue-color: #0022c7;
+
+  $green-color: #00c525;
+  $red-color: #d62816;
+
+  $grey-color: #cacaca;
+  $black-color: #000000;
+
+  @include theme($dark-blue-color, $grey-color, $light-blue-color, $black-color, $green-color, $red-color);
+}
+
+.alternative-theme {
+  $dark-purple-color: #5955df;
+  $light-purple-color: #7e75f0;
+  
+  $green-color: #73ce7c;
+  $red-color: #d96459;
+
+  $grey-color: #cacaca;
+  $black-color: #000000;
+
+  @include theme($light-purple-color, $black-color, $dark-purple-color, $grey-color, $green-color, $red-color);
+}
